@@ -1,6 +1,8 @@
-## Drag and drop with the SolidJS
+# Drag and drop with the SolidJS
 
 use solidJS about swapy library to create drag and drop feature
+
+![CleanShot 2024-08-22 at 06 14 50](https://github.com/user-attachments/assets/37322d6f-37ad-416e-abea-e1aad5a10be3)
 
 ## Features
 
