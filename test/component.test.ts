@@ -1,22 +1,18 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import TheCounter from '../src/components/TheCounter.vue'
+import DragAndDrop from '~/components/drag-and-drop.vue'
 
 describe('component of TheCounter.vue', () => {
   it('should render', () => {
-    const wrapper = mount(TheCounter, { props: { initial: 10 } })
-    expect(wrapper.text()).toContain('10')
-    expect(wrapper.html()).toMatchSnapshot()
-  })
+    const wrapper = mount(DragAndDrop)
+    expect(wrapper.find('.container').exists()).toBe(true)
+    expect(wrapper.find('.slot.a').exists()).toBe(true)
+    expect(wrapper.find('.second-row').exists()).toBe(true)
+    expect(wrapper.find('.slot.d').exists()).toBe(true)
 
-  it('should be interactive', async () => {
-    const wrapper = mount(TheCounter, { props: { initial: 0 } })
-    expect(wrapper.text()).toContain('0')
-
-    expect(wrapper.find('.inc').exists()).toBe(true)
-
-    await wrapper.get('button').trigger('click')
-
-    expect(wrapper.text()).toContain('1')
+    // 檢查項目
+    expect(wrapper.find('.item.a').text()).toBe('A')
+    expect(wrapper.find('.item.c').text()).toBe('C')
+    expect(wrapper.find('.item.d').text()).toBe('D')
   })
 })
